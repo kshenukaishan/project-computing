@@ -2,9 +2,12 @@ package dao.custom.impl;
 
 import dao.custom.PurchaseOrderDao;
 import model.PurchaseOrder;
+import model.RepairOrder;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
     @Override
@@ -14,7 +17,10 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
 
     @Override
     public void delete(List<PurchaseOrder> list, Scanner input) {
-
+        System.out.println("Enter Repair Order id to delete");
+        int selectedOrder = input.nextInt();
+        PurchaseOrder orderToDelete = list.get(selectedOrder - 1);
+        list.remove(orderToDelete);
     }
 
     @Override
@@ -24,7 +30,10 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
 
     @Override
     public void findById(List<PurchaseOrder> list, Scanner input) {
-
+        System.out.println("Enter the ID of Repair Order");
+        int id = input.nextInt();
+        Stream<PurchaseOrder> purchaseOrderStream = list.stream().filter(order -> order.getId() == id);
+        System.out.println(purchaseOrderStream);
     }
 
     @Override
