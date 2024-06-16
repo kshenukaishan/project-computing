@@ -60,7 +60,7 @@ public class RepairOrdersMenu {
     }
 
     private static void updateOrders(List<RepairOrder> repairOrders, Scanner input) {
-        System.out.println("Update orders");
+        new RepairOrderDaoImpl().update(repairOrders, input);
     }
 
     private static void findOrders(List<RepairOrder> repairOrders, Scanner input) {

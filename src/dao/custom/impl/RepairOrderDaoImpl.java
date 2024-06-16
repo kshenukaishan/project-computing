@@ -19,7 +19,33 @@ public class RepairOrderDaoImpl implements RepairOrderDao {
 
     @Override
     public void update(List<RepairOrder> list, Scanner input) {
+        System.out.println("Enter Repair Order for update");
+        int id = input.nextInt();
+        RepairOrder repairOrderUpdate = list.get(id - 1);
 
+        boolean updateStatus = true;
+
+        while(updateStatus){
+
+            System.out.println("Enter new Description");
+            String newDescription = input.nextLine();
+            repairOrderUpdate.setDescription(newDescription);
+            input.nextLine();
+
+            System.out.println("Enter new Status");
+            int status = input.nextInt();
+            repairOrderUpdate.setCompleted(status);
+            input.nextLine();
+
+            System.out.println("Enter new Return Date");
+            String date = input.nextLine();
+            repairOrderUpdate.setReturnDate(date);
+            input.nextLine();
+
+            System.out.println("Repair Order has been updated");
+            updateStatus = false;
+        }
+        list.forEach(System.out::println);
     }
 
     @Override
