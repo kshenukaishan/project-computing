@@ -56,7 +56,7 @@ public class RepairOrdersMenu {
     }
 
     private static void deleteOrders(List<RepairOrder> repairOrders, Scanner input) {
-        System.out.println("Delete orders");
+        new RepairOrderDaoImpl().delete(repairOrders, input);
     }
 
     private static void updateOrders(List<RepairOrder> repairOrders, Scanner input) {
@@ -64,7 +64,7 @@ public class RepairOrdersMenu {
     }
 
     private static void findOrders(List<RepairOrder> repairOrders, Scanner input) {
-        System.out.println("Find orders");
+        new RepairOrderDaoImpl().findById(repairOrders, input);
     }
 
     private static void addOrders(List<RepairOrder> repairOrders, Scanner input) {

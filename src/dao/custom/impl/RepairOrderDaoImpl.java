@@ -4,6 +4,7 @@ import dao.custom.RepairOrderDao;
 import model.RepairOrder;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class RepairOrderDaoImpl implements RepairOrderDao {
@@ -14,7 +15,10 @@ public class RepairOrderDaoImpl implements RepairOrderDao {
 
     @Override
     public void delete(List<RepairOrder> list, Scanner input) {
-
+        System.out.println("Enter Repair Order id to delete");
+        int selectedOrder = input.nextInt();
+        RepairOrder orderToDelete = list.get(selectedOrder - 1);
+        list.remove(orderToDelete);
     }
 
     @Override
@@ -50,7 +54,10 @@ public class RepairOrderDaoImpl implements RepairOrderDao {
 
     @Override
     public void findById(List<RepairOrder> list, Scanner input) {
-
+        System.out.println("Enter the ID of Repair Order");
+        int id = input.nextInt();
+        Optional<RepairOrder> foundRepairOrder = list.stream().filter(order -> order.getId() == id).findFirst();
+        System.out.println(foundRepairOrder);
     }
 
     @Override
