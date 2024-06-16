@@ -3,7 +3,7 @@ package dao;
 import java.util.List;
 import java.util.Scanner;
 
-public interface CrudDao<T> {
+public interface JanakaComputerManager<T> {
 
     void viewAll(List<T> list);
     void delete(List<T> list, Scanner input);

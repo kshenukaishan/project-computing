@@ -1,7 +1,7 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.JanakaComputerManager;
 import model.Laptop;
 
-public interface LaptopDao extends CrudDao<Laptop> {
+public interface LaptopDao extends JanakaComputerManager<Laptop> {
 }

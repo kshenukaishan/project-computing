@@ -1,7 +1,7 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.JanakaComputerManager;
 import model.PcComponent;
 
-public interface PcComponentDao extends CrudDao<PcComponent> {
+public interface PcComponentDao extends JanakaComputerManager<PcComponent> {
 }

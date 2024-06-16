@@ -57,15 +57,15 @@ public class PurchaseOrdersMenu {
     }
 
     private static void deletePurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {
-        System.out.println("Delete Order");
+        new PurchaseOrderDaoImpl().delete(purchaseOrders, input);
     }
 
     private static void updatePurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {
-        System.out.println("Update Order");
+        new PurchaseOrderDaoImpl().update(purchaseOrders, input);
     }
 
     private static void findPurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {
-        System.out.println("Find Order");
+        new PurchaseOrderDaoImpl().findById(purchaseOrders, input);
     }
 
     private static void addPurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {

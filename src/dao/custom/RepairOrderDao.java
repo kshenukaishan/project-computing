@@ -1,7 +1,7 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.JanakaComputerManager;
 import model.RepairOrder;
 
-public interface RepairOrderDao extends CrudDao<RepairOrder> {
+public interface RepairOrderDao extends JanakaComputerManager<RepairOrder> {
 }

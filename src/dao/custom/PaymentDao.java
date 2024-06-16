@@ -1,7 +1,7 @@
 package dao.custom;
 
-import dao.CrudDao;
+import dao.JanakaComputerManager;
 import model.Payment;
 
-public interface PaymentDao extends CrudDao<Payment> {
+public interface PaymentDao extends JanakaComputerManager<Payment> {
 }

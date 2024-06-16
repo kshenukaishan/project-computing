@@ -4,8 +4,8 @@ import dao.custom.PurchaseOrderDao;
 import model.PurchaseOrder;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
     @Override
@@ -56,8 +56,8 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
     public void findById(List<PurchaseOrder> list, Scanner input) {
         System.out.println("Enter the ID of Repair Order");
         int id = input.nextInt();
-        Stream<PurchaseOrder> purchaseOrderStream = list.stream().filter(order -> order.getId() == id);
-        System.out.println(purchaseOrderStream);
+        Optional<PurchaseOrder> findOrder = list.stream().filter(order -> order.getId() == id).findFirst();
+        System.out.println(findOrder);
     }
 
     @Override
@@ -78,12 +78,12 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
             purchaseOrder.setDescription(description);
             input.nextLine();
 
-            System.out.println("Enter Status Completed");
+            System.out.println("Enter Status Delivered");
             int status = input.nextInt();
             purchaseOrder.setDelivered(status);
             input.nextLine();
 
-            System.out.println("Enter Return Date");
+            System.out.println("Enter deadline");
             String date = input.nextLine();
             purchaseOrder.setDeadLine(date);
             input.nextLine();
