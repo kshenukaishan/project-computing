@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import dao.custom.PaymentDao;
 import model.Payment;
+import model.PurchaseOrder;
 
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +20,33 @@ public class PaymentDaoImpl implements PaymentDao {
 
     @Override
     public void update(List<Payment> list, Scanner input) {
+        System.out.println("Enter Payment id for update");
+        int id = input.nextInt();
+        Payment payment = list.get(id - 1);
 
+        boolean updateStatus = true;
+
+        while(updateStatus){
+
+            System.out.println("Enter new Description");
+            String newDescription = input.nextLine();
+            payment.setDescription(newDescription);
+            input.nextLine();
+
+            System.out.println("Enter new Amount");
+            double amount = input.nextDouble();
+            payment.setAmount(amount);
+            input.nextLine();
+
+            System.out.println("Enter Completed Status");
+            int status = input.nextInt();
+            payment.setCompleted(status);
+            input.nextLine();
+
+            System.out.println("Payment has been updated");
+            updateStatus = false;
+        }
+        list.forEach(System.out::println);
     }
 
     @Override
