@@ -5,9 +5,12 @@ public class PurchaseOrder {
     private int id;
     private String description;
     private String deadLine;
-    private boolean delivered;
+    private int delivered;
 
-    public PurchaseOrder(int id, String description, String deadLine, boolean delivered) {
+    public PurchaseOrder() {
+    }
+
+    public PurchaseOrder(int id, String description, String deadLine, int delivered) {
         this.id = id;
         this.description = description;
         this.deadLine = deadLine;
@@ -38,11 +41,21 @@ public class PurchaseOrder {
         this.deadLine = deadLine;
     }
 
-    public boolean isDelivered() {
+    public int isDelivered() {
         return delivered;
     }
 
-    public void setDelivered(boolean delivered) {
+    public void setDelivered(int delivered) {
         this.delivered = delivered;
+    }
+
+    @Override
+    public String toString() {
+        return "PurchaseOrder{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", deadLine='" + deadLine + '\'' +
+                ", delivered=" + delivered +
+                '}';
     }
 }

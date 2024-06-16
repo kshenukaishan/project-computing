@@ -77,12 +77,12 @@ public class RepairOrderDaoImpl implements RepairOrderDao {
             repairOrder.setDescription(description);
             input.nextLine();
 
-            System.out.println("Enter Status Completed");
+            System.out.println("Enter Status Delivered");
             int status = input.nextInt();
             repairOrder.setCompleted(status);
             input.nextLine();
 
-            System.out.println("Enter Return Date");
+            System.out.println("Enter Delivered Date");
             String date = input.nextLine();
             repairOrder.setReturnDate(date);
             input.nextLine();

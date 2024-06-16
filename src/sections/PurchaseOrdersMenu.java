@@ -1,5 +1,6 @@
 package sections;
 
+import dao.custom.impl.PurchaseOrderDaoImpl;
 import model.PurchaseOrder;
 import util.MenuSetup;
 
@@ -42,7 +43,7 @@ public class PurchaseOrdersMenu {
                     deletePurchaseOrder(purchaseOrders, input);
                     break;
                 case 4:
-                    viewPurchaseOrders(purchaseOrders, input);
+                    viewPurchaseOrders(purchaseOrders);
                     break;
                 case 5:
                     System.out.println("Main Menu");
@@ -51,8 +52,8 @@ public class PurchaseOrdersMenu {
         }
     }
 
-    private static void viewPurchaseOrders(List<PurchaseOrder> purchaseOrders, Scanner input) {
-        System.out.println("View all orders");
+    private static void viewPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
+        new PurchaseOrderDaoImpl().viewAll(purchaseOrders);
     }
 
     private static void deletePurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {
@@ -68,6 +69,6 @@ public class PurchaseOrdersMenu {
     }
 
     private static void addPurchaseOrder(List<PurchaseOrder> purchaseOrders, Scanner input) {
-        System.out.println("Add Orders");
+        new PurchaseOrderDaoImpl().add(purchaseOrders, input);
     }
 }
