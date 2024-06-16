@@ -5,9 +5,12 @@ public class RepairOrder {
     private int id;
     private String description;
     private String returnDate;
-    private boolean completed;
+    private int completed;
 
-    public RepairOrder(int id, String description, String returnDate, boolean completed) {
+    public RepairOrder() {
+    }
+
+    public RepairOrder(int id, String description, String returnDate, int completed) {
         this.id = id;
         this.description = description;
         this.returnDate = returnDate;
@@ -38,11 +41,21 @@ public class RepairOrder {
         this.returnDate = returnDate;
     }
 
-    public boolean isCompleted() {
+    public int isCompleted() {
         return completed;
     }
 
-    public void setCompleted(boolean completed) {
+    public void setCompleted(int completed) {
         this.completed = completed;
+    }
+
+    @Override
+    public String toString() {
+        return "RepairOrder{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", returnDate='" + returnDate + '\'' +
+                ", completed=" + completed +
+                '}';
     }
 }

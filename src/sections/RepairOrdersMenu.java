@@ -1,5 +1,6 @@
 package sections;
 
+import dao.custom.impl.RepairOrderDaoImpl;
 import model.RepairOrder;
 import util.MenuSetup;
 
@@ -41,7 +42,7 @@ public class RepairOrdersMenu {
                     deleteOrders(repairOrders, input);
                     break;
                 case 4:
-                    viewAllOrders(repairOrders, input);
+                    viewAllOrders(repairOrders);
                     break;
                 case 5:
                     System.out.println("Main Menu");
@@ -50,8 +51,8 @@ public class RepairOrdersMenu {
         }
     }
 
-    private static void viewAllOrders(List<RepairOrder> repairOrders, Scanner input) {
-        System.out.println("View All orders");
+    private static void viewAllOrders(List<RepairOrder> repairOrders) {
+        new RepairOrderDaoImpl().viewAll(repairOrders);
     }
 
     private static void deleteOrders(List<RepairOrder> repairOrders, Scanner input) {
@@ -67,6 +68,6 @@ public class RepairOrdersMenu {
     }
 
     private static void addOrders(List<RepairOrder> repairOrders, Scanner input) {
-        System.out.println("Add Orders");
+        new RepairOrderDaoImpl().add(repairOrders, input);
     }
 }
