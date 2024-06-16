@@ -35,13 +35,13 @@ public class ComputersMenu {
 
             switch (selectedItem){
                 case 0:
-                    System.out.println("Desktops");
+                    System.out.println("Desktop Computers");
                     break;
                 case 1:
-                    System.out.println("Laptops");
+                    System.out.println("Laptop Computers");
                     break;
                 case 2:
-                    System.out.println("Other pc");
+                    System.out.println("Other PC Components");
                     break;
                 case 3:
                     System.out.println("Main Menu");
