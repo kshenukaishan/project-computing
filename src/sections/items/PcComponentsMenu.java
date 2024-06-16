@@ -1,6 +1,5 @@
 package sections.items;
 
-import model.Laptop;
 import model.PcComponent;
 import util.MenuSetup;
 
