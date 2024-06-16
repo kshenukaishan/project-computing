@@ -3,6 +3,8 @@ package sections;
 import model.Desktop;
 import model.Laptop;
 import model.PcComponents;
+import sections.items.DesktopMenu;
+import sections.items.LaptopMenu;
 import util.MenuSetup;
 
 import java.util.ArrayList;
@@ -12,10 +14,6 @@ import java.util.Scanner;
 public class ComputersMenu {
 
     public static void computersSection(Scanner input){
-
-        List<Desktop> desktops = new ArrayList<>();
-        List<Laptop> laptops = new ArrayList<>();
-        List<PcComponents> pcComponents = new ArrayList<>();
 
         String[] computerMenuItems = new String[5];
 
@@ -29,16 +27,21 @@ public class ComputersMenu {
     }
 
     private static void subMenuSection(Scanner input, String[] computerMenuItems){
+
+        List<Desktop> desktops = new ArrayList<>();
+        List<Laptop> laptops = new ArrayList<>();
+        List<PcComponents> pcComponents = new ArrayList<>();
+
         while (true){
 
             int selectedItem = MenuSetup.printMenu(computerMenuItems, input);
 
             switch (selectedItem){
                 case 0:
-                    System.out.println("Desktop Computers");
+                    DesktopMenu.desktopComputerSection(desktops, input);
                     break;
                 case 1:
-                    System.out.println("Laptop Computers");
+                    LaptopMenu.laptopComputerSection(laptops, input);
                     break;
                 case 2:
                     System.out.println("Other PC Components");

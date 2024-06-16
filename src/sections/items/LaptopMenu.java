@@ -1,28 +1,29 @@
 package sections.items;
 
 import model.Desktop;
+import model.Laptop;
 import util.MenuSetup;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class DesktopMenu {
+public class LaptopMenu {
 
-    public static void desktopComputerSection(List<Desktop> desktops, Scanner input){
+    public static void laptopComputerSection(List<Laptop> laptops, Scanner input){
 
-        String[] desktopMenuItems = new String[5];
+        String[] laptopMenuItems = new String[5];
 
-        desktopMenuItems[0] = "(1) Add Computer";
-        desktopMenuItems[1] = "(2) Update Computer";
-        desktopMenuItems[2] = "(3) Delete Computer";
-        desktopMenuItems[3] = "(4) View All Computers";
-        desktopMenuItems[4] = "(5) Back";
+        laptopMenuItems[0] = "(1) Add Computer";
+        laptopMenuItems[1] = "(2) Update Computer";
+        laptopMenuItems[2] = "(3) Delete Computer";
+        laptopMenuItems[3] = "(4) View All Computers";
+        laptopMenuItems[4] = "(5) Back";
 
-        subMenuSection(desktops, input, desktopMenuItems);
+        subMenuSection(laptops, input, laptopMenuItems);
 
     }
 
-    private static void subMenuSection(List<Desktop> desktops, Scanner input, String[] menuItems){
+    private static void subMenuSection(List<Laptop> laptops, Scanner input, String[] menuItems){
         while (true){
             int selectedItem = MenuSetup.printMenu(menuItems, input);
             switch (selectedItem){
@@ -42,7 +43,7 @@ public class DesktopMenu {
                     System.out.println("Computers Menu");
                     return;
             }
-
         }
     }
+
 }
