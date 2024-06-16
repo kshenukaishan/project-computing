@@ -2,10 +2,8 @@ package dao.custom.impl;
 
 import dao.custom.PurchaseOrderDao;
 import model.PurchaseOrder;
-import model.RepairOrder;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -25,7 +23,33 @@ public class PurchaseOrderDaoImpl implements PurchaseOrderDao {
 
     @Override
     public void update(List<PurchaseOrder> list, Scanner input) {
+        System.out.println("Enter Repair Order for update");
+        int id = input.nextInt();
+        PurchaseOrder purchaseOrderUpdate = list.get(id - 1);
 
+        boolean updateStatus = true;
+
+        while(updateStatus){
+
+            System.out.println("Enter new Description");
+            String newDescription = input.nextLine();
+            purchaseOrderUpdate.setDescription(newDescription);
+            input.nextLine();
+
+            System.out.println("Enter new delivery Status");
+            int status = input.nextInt();
+            purchaseOrderUpdate.setDelivered(status);
+            input.nextLine();
+
+            System.out.println("Enter new deadline");
+            String date = input.nextLine();
+            purchaseOrderUpdate.setDeadLine(date);
+            input.nextLine();
+
+            System.out.println("Purchase Order has been updated");
+            updateStatus = false;
+        }
+        list.forEach(System.out::println);
     }
 
     @Override
