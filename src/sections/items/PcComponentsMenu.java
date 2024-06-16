@@ -28,21 +28,41 @@ public class PcComponentsMenu {
             int selectedItem = MenuSetup.printMenu(menuItems, input);
             switch (selectedItem){
                 case 0:
-                    System.out.println("Add Computer");
+                    System.out.println("Add Component");
+                    addComponent(components, input);
                     break;
                 case 1:
-                    System.out.println("Update Computer");
+                    System.out.println("Update Component");
+                    updateComponent(components, input);
                     break;
                 case 2:
-                    System.out.println("Delete Computer");
+                    System.out.println("Delete Component");
+                    deleteComponent(components, input);
                     break;
                 case 3:
-                    System.out.println("View All Computers");
+                    System.out.println("View All Components");
+                    viewAllComponent(components, input);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
                     return;
             }
         }
+    }
+
+    private static void viewAllComponent(List<PcComponent> components, Scanner input) {
+        System.out.println("View all components");
+    }
+
+    private static void deleteComponent(List<PcComponent> components, Scanner input) {
+        System.out.println("Delete Component");
+    }
+
+    private static void updateComponent(List<PcComponent> components, Scanner input) {
+        System.out.println("Update Component");
+    }
+
+    private static void addComponent(List<PcComponent> components, Scanner input) {
+        System.out.println("Add Component");
     }
 }
