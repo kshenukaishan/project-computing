@@ -13,10 +13,10 @@ public class LaptopMenu {
 
         String[] laptopMenuItems = new String[5];
 
-        laptopMenuItems[0] = "(1) Add Computer";
-        laptopMenuItems[1] = "(2) Update Computer";
-        laptopMenuItems[2] = "(3) Delete Computer";
-        laptopMenuItems[3] = "(4) View All Computers";
+        laptopMenuItems[0] = "(1) Add Laptop";
+        laptopMenuItems[1] = "(2) Update Laptop";
+        laptopMenuItems[2] = "(3) Delete Laptop";
+        laptopMenuItems[3] = "(4) View All Laptops";
         laptopMenuItems[4] = "(5) Back";
 
         subMenuSection(laptops, input, laptopMenuItems);
@@ -28,22 +28,42 @@ public class LaptopMenu {
             int selectedItem = MenuSetup.printMenu(menuItems, input);
             switch (selectedItem){
                 case 0:
-                    System.out.println("Add Computer");
+                    System.out.println("Add Laptop");
+                    addLaptop(laptops, input);
                     break;
                 case 1:
-                    System.out.println("Update Computer");
+                    System.out.println("Update Laptop");
+                    updateLaptop(laptops, input);
                     break;
                 case 2:
-                    System.out.println("Delete Computer");
+                    System.out.println("Delete Laptop");
+                    deleteLaptop(laptops, input);
                     break;
                 case 3:
-                    System.out.println("View All Computers");
+                    System.out.println("View All Laptops");
+                    viewAllLaptops(laptops, input);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
                     return;
             }
         }
+    }
+
+    private static void viewAllLaptops(List<Laptop> laptops, Scanner input) {
+        System.out.println("View all laptops");
+    }
+
+    private static void deleteLaptop(List<Laptop> laptops, Scanner input) {
+        System.out.println("Delete Laptop");
+    }
+
+    private static void updateLaptop(List<Laptop> laptops, Scanner input) {
+        System.out.println("Update Laptop");
+    }
+
+    private static void addLaptop(List<Laptop> laptops, Scanner input) {
+        System.out.println("Add laptop");
     }
 
 }
