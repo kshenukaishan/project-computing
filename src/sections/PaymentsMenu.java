@@ -1,5 +1,6 @@
 package sections;
 
+import dao.custom.impl.PaymentDaoImpl;
 import model.Payment;
 import util.MenuSetup;
 
@@ -38,7 +39,7 @@ public class PaymentsMenu {
                     updatePayment(payments, input);
                     break;
                 case 3:
-                    viewAllPayments(payments, input);
+                    viewAllPayments(payments);
                     break;
                 case 4:
                     System.out.println("Main Menu");
@@ -47,19 +48,19 @@ public class PaymentsMenu {
         }
     }
 
-    private static void viewAllPayments(List<Payment> payments, Scanner input) {
-        System.out.println("View all payments");
+    private static void viewAllPayments(List<Payment> payments) {
+        new PaymentDaoImpl().viewAll(payments);
     }
 
     private static void updatePayment(List<Payment> payments, Scanner input) {
-        System.out.println("Update Payment");
+        new PaymentDaoImpl().update(payments, input);
     }
 
     private static void findPayment(List<Payment> payments, Scanner input) {
-        System.out.println("Find Payment");
+        new PaymentDaoImpl().findById(payments, input);
     }
 
     private static void addPayment(List<Payment> payments, Scanner input) {
-        System.out.println("Add Payment");
+        new PaymentDaoImpl().add(payments, input);
     }
 }

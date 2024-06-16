@@ -5,6 +5,7 @@ import model.Payment;
 import model.PurchaseOrder;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class PaymentDaoImpl implements PaymentDao {
@@ -15,7 +16,10 @@ public class PaymentDaoImpl implements PaymentDao {
 
     @Override
     public void delete(List<Payment> list, Scanner input) {
-
+        System.out.println("Enter Payment id to delete");
+        int id = input.nextInt();
+        Payment payment = list.get(id - 1);
+        list.remove(payment);
     }
 
     @Override
@@ -51,7 +55,10 @@ public class PaymentDaoImpl implements PaymentDao {
 
     @Override
     public void findById(List<Payment> list, Scanner input) {
-
+        System.out.println("Enter the ID of Repair Order");
+        int id = input.nextInt();
+        Optional<Payment> findPayment = list.stream().filter(payment -> payment.getId() == id).findFirst();
+        System.out.println(findPayment);
     }
 
     @Override
