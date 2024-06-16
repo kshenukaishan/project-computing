@@ -28,15 +28,19 @@ public class DesktopMenu {
             switch (selectedItem){
                 case 0:
                     System.out.println("Add Computer");
+                    addComputer(desktops, input);
                     break;
                 case 1:
                     System.out.println("Update Computer");
+                    updateComputer(desktops, input);
                     break;
                 case 2:
                     System.out.println("Delete Computer");
+                    deleteComputer(desktops, input);
                     break;
                 case 3:
                     System.out.println("View All Computers");
+                    viewAllComputers(desktops, input);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
@@ -44,5 +48,21 @@ public class DesktopMenu {
             }
 
         }
+    }
+
+    private static void viewAllComputers(List<Desktop> desktops, Scanner input) {
+        System.out.println("View all computers");
+    }
+
+    private static void deleteComputer(List<Desktop> desktops, Scanner input) {
+        System.out.println("Delete Computer");
+    }
+
+    private static void updateComputer(List<Desktop> desktops, Scanner input) {
+        System.out.println("Update Computer");
+    }
+
+    private static void addComputer(List<Desktop> desktops, Scanner input) {
+        System.out.println("Add Computer");
     }
 }

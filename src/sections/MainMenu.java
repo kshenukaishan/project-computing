@@ -39,6 +39,7 @@ public class MainMenu {
                     break;
                 case 1:
                     System.out.println("PC Inventory Menu");
+                    ComputersMenu.computersSection(input);
                     break;
                 case 2:
                     System.out.println("Purchase Orders Menu");

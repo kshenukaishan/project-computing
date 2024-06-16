@@ -21,7 +21,7 @@ public class ComputersMenu {
         computerMenuItems[0] = "(1) Desktop Section";
         computerMenuItems[1] = "(2) Laptop Section";
         computerMenuItems[2] = "(3) Other PC Components";
-        computerMenuItems[3] = "(5) Back";
+        computerMenuItems[3] = "(4) Back";
 
         subMenuSection(input, computerMenuItems);
 
@@ -39,12 +39,15 @@ public class ComputersMenu {
 
             switch (selectedItem){
                 case 0:
+                    System.out.println("Desktop Computers");
                     DesktopMenu.desktopComputerSection(desktops, input);
                     break;
                 case 1:
+                    System.out.println("Laptop Computers");
                     LaptopMenu.laptopComputerSection(laptops, input);
                     break;
                 case 2:
+                    System.out.println("PC Components");
                     PcComponentsMenu.pcComponentsSection(pcComponents, input);
                     break;
                 case 3:
