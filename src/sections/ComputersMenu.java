@@ -2,9 +2,10 @@ package sections;
 
 import model.Desktop;
 import model.Laptop;
-import model.PcComponents;
+import model.PcComponent;
 import sections.items.DesktopMenu;
 import sections.items.LaptopMenu;
+import sections.items.PcComponentsMenu;
 import util.MenuSetup;
 
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class ComputersMenu {
 
         List<Desktop> desktops = new ArrayList<>();
         List<Laptop> laptops = new ArrayList<>();
-        List<PcComponents> pcComponents = new ArrayList<>();
+        List<PcComponent> pcComponents = new ArrayList<>();
 
         while (true){
 
@@ -44,7 +45,7 @@ public class ComputersMenu {
                     LaptopMenu.laptopComputerSection(laptops, input);
                     break;
                 case 2:
-                    System.out.println("Other PC Components");
+                    PcComponentsMenu.pcComponentsSection(pcComponents, input);
                     break;
                 case 3:
                     System.out.println("Main Menu");
