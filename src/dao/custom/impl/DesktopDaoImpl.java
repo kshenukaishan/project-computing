@@ -5,6 +5,7 @@ import model.Desktop;
 import type.ComputerType;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class DesktopDaoImpl implements DesktopDao {
@@ -15,7 +16,10 @@ public class DesktopDaoImpl implements DesktopDao {
 
     @Override
     public void delete(List<Desktop> list, Scanner input) {
-
+        System.out.println("Enter Desktop id to delete");
+        int id = input.nextInt();
+        Desktop desktopFind = list.get(id - 1);
+        list.remove(desktopFind);
     }
 
     @Override
@@ -46,7 +50,10 @@ public class DesktopDaoImpl implements DesktopDao {
 
     @Override
     public void findById(List<Desktop> list, Scanner input) {
-
+        System.out.println("Enter the ID of Desktop");
+        int id = input.nextInt();
+        Optional<Desktop> desktopFind = list.stream().filter(desktop -> desktop.getId() == id).findFirst();
+        System.out.println(desktopFind);
     }
 
     @Override

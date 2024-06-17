@@ -56,7 +56,7 @@ public class DesktopMenu {
     }
 
     private static void deleteComputer(List<Desktop> desktops, Scanner input) {
-        System.out.println("Delete Computer");
+        new DesktopDaoImpl().delete(desktops, input);
     }
 
     private static void updateComputer(List<Desktop> desktops, Scanner input) {
