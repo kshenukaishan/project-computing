@@ -9,13 +9,16 @@ public class Computer {
     private int id;
     private ComputerType type;
     private String brand;
-    private Date entryDate;
+    private String entryDate;
 
-    public Computer(int id, ComputerType type, String brand, Date entryDate) {
+    public Computer(int id, ComputerType type, String brand, String entryDate) {
         this.id = id;
         this.type = type;
         this.brand = brand;
         this.entryDate = entryDate;
+    }
+
+    public Computer() {
     }
 
     public int getId() {
@@ -42,11 +45,11 @@ public class Computer {
         this.brand = brand;
     }
 
-    public Date getEntryDate() {
+    public String getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(Date entryDate) {
+    public void setEntryDate(String entryDate) {
         this.entryDate = entryDate;
     }
 

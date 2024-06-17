@@ -1,5 +1,6 @@
 package sections.items;
 
+import dao.custom.impl.DesktopDaoImpl;
 import model.Desktop;
 import util.MenuSetup;
 
@@ -28,7 +29,7 @@ public class DesktopMenu {
             switch (selectedItem){
                 case 0:
                     System.out.println("Add Computer");
-                    addComputer(desktops, input);
+                    new DesktopDaoImpl().add(desktops, input);
                     break;
                 case 1:
                     System.out.println("Update Computer");
@@ -40,7 +41,7 @@ public class DesktopMenu {
                     break;
                 case 3:
                     System.out.println("View All Computers");
-                    viewAllComputers(desktops, input);
+                    new DesktopDaoImpl().viewAll(desktops);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
