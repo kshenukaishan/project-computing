@@ -55,11 +55,11 @@ public class PcComponentsMenu {
     }
 
     private static void deleteComponent(List<PcComponent> components, Scanner input) {
-        System.out.println("Delete Component");
+        new PcComponentDaoImpl().delete(components, input);
     }
 
     private static void updateComponent(List<PcComponent> components, Scanner input) {
-        System.out.println("Update Component");
+        new PcComponentDaoImpl().update(components, input);
     }
 
     private static void addComponent(List<PcComponent> components, Scanner input) {
