@@ -1,5 +1,6 @@
 package sections.items;
 
+import dao.custom.impl.LaptopDaoImpl;
 import model.Desktop;
 import model.Laptop;
 import util.MenuSetup;
@@ -41,7 +42,7 @@ public class LaptopMenu {
                     break;
                 case 3:
                     System.out.println("View All Laptops");
-                    viewAllLaptops(laptops, input);
+                    viewAllLaptops(laptops);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
@@ -50,8 +51,8 @@ public class LaptopMenu {
         }
     }
 
-    private static void viewAllLaptops(List<Laptop> laptops, Scanner input) {
-        System.out.println("View all laptops");
+    private static void viewAllLaptops(List<Laptop> laptops) {
+        new LaptopDaoImpl().viewAll(laptops);
     }
 
     private static void deleteLaptop(List<Laptop> laptops, Scanner input) {
@@ -63,7 +64,7 @@ public class LaptopMenu {
     }
 
     private static void addLaptop(List<Laptop> laptops, Scanner input) {
-        System.out.println("Add laptop");
+        new LaptopDaoImpl().add(laptops, input);
     }
 
 }
