@@ -29,7 +29,7 @@ public class DesktopMenu {
             switch (selectedItem){
                 case 0:
                     System.out.println("Add Computer");
-                    new DesktopDaoImpl().add(desktops, input);
+                    addComputer(desktops, input);
                     break;
                 case 1:
                     System.out.println("Update Computer");
@@ -41,7 +41,7 @@ public class DesktopMenu {
                     break;
                 case 3:
                     System.out.println("View All Computers");
-                    new DesktopDaoImpl().viewAll(desktops);
+                    viewAllComputers(desktops);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
@@ -51,8 +51,8 @@ public class DesktopMenu {
         }
     }
 
-    private static void viewAllComputers(List<Desktop> desktops, Scanner input) {
-        System.out.println("View all computers");
+    private static void viewAllComputers(List<Desktop> desktops) {
+        new DesktopDaoImpl().viewAll(desktops);
     }
 
     private static void deleteComputer(List<Desktop> desktops, Scanner input) {
@@ -60,10 +60,10 @@ public class DesktopMenu {
     }
 
     private static void updateComputer(List<Desktop> desktops, Scanner input) {
-        System.out.println("Update Computer");
+        new DesktopDaoImpl().update(desktops, input);
     }
 
     private static void addComputer(List<Desktop> desktops, Scanner input) {
-        System.out.println("Add Computer");
+        new DesktopDaoImpl().add(desktops, input);
     }
 }

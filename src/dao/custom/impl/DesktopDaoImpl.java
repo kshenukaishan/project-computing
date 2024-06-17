@@ -2,7 +2,6 @@ package dao.custom.impl;
 
 import dao.custom.DesktopDao;
 import model.Desktop;
-import model.Payment;
 import type.ComputerType;
 
 import java.util.List;
@@ -21,7 +20,28 @@ public class DesktopDaoImpl implements DesktopDao {
 
     @Override
     public void update(List<Desktop> list, Scanner input) {
+        System.out.println("Enter Desktop id for update");
+        int id = input.nextInt();
+        Desktop desktopUpdate = list.get(id - 1);
 
+        boolean updateStatus = true;
+
+        while(updateStatus){
+
+            System.out.println("Enter new Brand");
+            String newBrand = input.nextLine();
+            desktopUpdate.setBrand(newBrand);
+            input.nextLine();
+
+            System.out.println("Enter new Date");
+            String newDate = input.nextLine();
+            desktopUpdate.setEntryDate(newDate);
+            input.nextLine();
+
+            System.out.println("Desktop has been updated");
+            updateStatus = false;
+        }
+        list.forEach(System.out::println);
     }
 
     @Override
