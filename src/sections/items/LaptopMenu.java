@@ -56,7 +56,7 @@ public class LaptopMenu {
     }
 
     private static void deleteLaptop(List<Laptop> laptops, Scanner input) {
-        System.out.println("Delete Laptop");
+        new LaptopDaoImpl().delete(laptops, input);
     }
 
     private static void updateLaptop(List<Laptop> laptops, Scanner input) {

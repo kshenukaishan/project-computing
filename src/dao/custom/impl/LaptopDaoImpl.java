@@ -6,6 +6,7 @@ import model.Laptop;
 import type.ComputerType;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class LaptopDaoImpl implements LaptopDao {
@@ -16,17 +17,44 @@ public class LaptopDaoImpl implements LaptopDao {
 
     @Override
     public void delete(List<Laptop> list, Scanner input) {
-
+        System.out.println("Enter Desktop id to delete");
+        int id = input.nextInt();
+        Laptop laptop = list.get(id - 1);
+        list.remove(laptop);
     }
 
     @Override
     public void update(List<Laptop> list, Scanner input) {
+        System.out.println("Enter Desktop id for update");
+        int id = input.nextInt();
+        Laptop laptopUpdate = list.get(id - 1);
 
+        boolean updateStatus = true;
+
+        while(updateStatus){
+
+            System.out.println("Enter new Brand");
+            String newBrand = input.nextLine();
+            laptopUpdate.setBrand(newBrand);
+            input.nextLine();
+
+            System.out.println("Enter new Date");
+            String newDate = input.nextLine();
+            laptopUpdate.setEntryDate(newDate);
+            input.nextLine();
+
+            System.out.println("Laptop has been updated");
+            updateStatus = false;
+        }
+        list.forEach(System.out::println);
     }
 
     @Override
     public void findById(List<Laptop> list, Scanner input) {
-
+        System.out.println("Enter the ID of Desktop");
+        int id = input.nextInt();
+        Optional<Laptop> findLaptop = list.stream().filter(desktop -> desktop.getId() == id).findFirst();
+        System.out.println(findLaptop);
     }
 
     @Override
