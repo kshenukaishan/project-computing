@@ -1,5 +1,6 @@
 package sections.items;
 
+import dao.custom.impl.PcComponentDaoImpl;
 import model.PcComponent;
 import util.MenuSetup;
 
@@ -40,7 +41,7 @@ public class PcComponentsMenu {
                     break;
                 case 3:
                     System.out.println("View All Components");
-                    viewAllComponent(components, input);
+                    viewAllComponent(components);
                     break;
                 case 4:
                     System.out.println("Computers Menu");
@@ -49,8 +50,8 @@ public class PcComponentsMenu {
         }
     }
 
-    private static void viewAllComponent(List<PcComponent> components, Scanner input) {
-        System.out.println("View all components");
+    private static void viewAllComponent(List<PcComponent> components) {
+        new PcComponentDaoImpl().viewAll(components);
     }
 
     private static void deleteComponent(List<PcComponent> components, Scanner input) {
@@ -62,6 +63,6 @@ public class PcComponentsMenu {
     }
 
     private static void addComponent(List<PcComponent> components, Scanner input) {
-        System.out.println("Add Component");
+        new PcComponentDaoImpl().add(components, input);
     }
 }
